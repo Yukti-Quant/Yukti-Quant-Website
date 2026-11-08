@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #05070d;
+  color: #e8edf5;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(195, 154, 58, 0.3);
+  color: #fbf6e9;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0e17;
+}
+::-webkit-scrollbar-thumb {
+  background: #1b2438;
+  border-radius: 6px;
+  border: 2px solid #0a0e17;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a87f2e;
+}
+
+@layer components {
+  .container-yx {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-28 lg:py-36;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.3em] text-gold-400;
+  }
+
+  .heading-xl {
+    @apply font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl;
+  }
+
+  .heading-lg {
+    @apply font-display text-3xl font-bold leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl;
+  }
+
+  .heading-md {
+    @apply font-display text-2xl font-semibold leading-[1.2] tracking-tight sm:text-3xl lg:text-4xl;
+  }
+
+  .body-lg {
+    @apply text-base leading-relaxed text-silver-300 sm:text-lg;
+  }
+
+  .body {
+    @apply text-sm leading-relaxed text-silver-400 sm:text-base;
+  }
+
+  .gold-line {
+    @apply h-px w-16 bg-gradient-to-r from-gold-500 to-transparent;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-white/[0.06] bg-base-850/60 backdrop-blur-sm;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-base-950 transition-all duration-300 hover:bg-gold-400 hover:shadow-[0_0_30px_-5px_rgba(195,154,58,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-silver-100 transition-all duration-300 hover:border-gold-500/60 hover:text-gold-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 font-mono text-xs text-silver-300;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-gradient-to-br from-gold-200 via-gold-400 to-gold-600 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-silver {
+    @apply bg-gradient-to-b from-white to-silver-400 bg-clip-text text-transparent;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .bg-grid-fine {
+    background-image:
+      linear-gradient(to right, rgba(195, 154, 58, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(195, 154, 58, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 40px -8px rgba(195, 154, 58, 0.5);
+  }
+
+  .glow-bull {
+    box-shadow: 0 0 30px -8px rgba(16, 185, 129, 0.5);
+  }
+
+  .text-shadow-gold {
+    text-shadow: 0 0 24px rgba(195, 154, 58, 0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
